@@ -1,0 +1,74 @@
+{%- comment -%}
+渲染论文列表。
+
+用法：
+  {% include publication_list.html publications=some_array %}
+
+说明：
+- 按 year 倒序分组，组内保持传入数组的顺序
+- authors 字段以 ", " 分隔，本人姓名自动加粗
+- links 下只渲染填了值的字段
+{%- endcomment -%}
+
+{%- assign pubs = include.publications -%}
+{%- assign own_name = site.data.profile.name_romanized -%}
+{%- assign groups = pubs | group_by: "year" | sort: "name" | reverse -%}
+
+{%- for group in groups %}
+<h2 class="pub-year">{{ group.name }}</h2>
+<ul class="pub-list">
+  {%- for pub in group.items %}
+  <li class="pub-item">
+    <p class="pub-title">
+      {%- if pub.title_url and pub.title_url != "" -%}
+      <a href="{{ pub.title_url }}" target="_blank" rel="noopener">{{ pub.title }}</a>
+      {%- else -%}
+      {{ pub.title }}
+      {%- endif -%}
+    </p>
+
+    {%- if pub.authors and pub.authors != "" %}
+    <p class="pub-authors">
+      {%- assign parts = pub.authors | split: ", " -%}
+      {%- for a in parts -%}
+        {%- if own_name and own_name != "" and a contains own_name -%}
+          <strong>{{ a }}</strong>
+        {%- else -%}
+          {{ a }}
+        {%- endif -%}
+        {%- unless forloop.last -%}, {% endunless -%}
+      {%- endfor -%}
+    </p>
+    {%- endif %}
+
+    {%- if pub.venue or pub.year %}
+    <p class="pub-venue">
+      {%- if pub.venue and pub.venue != "" -%}<em>{{ pub.venue }}</em>{%- endif -%}
+      {%- if pub.year %}{% if pub.venue and pub.venue != "" %}, {% endif %}{{ pub.year }}{% endif -%}
+    </p>
+    {%- endif %}
+
+    {%- if pub.links %}
+      {%- assign link_keys = "pdf,code,arxiv,doi,slides,bibtex" | split: "," -%}
+      {%- assign rendered = "" | split: "" -%}
+      {%- for key in link_keys -%}
+        {%- assign val = pub.links[key] -%}
+        {%- if val and val != "" -%}
+          {%- capture item_html -%}
+            {%- if key == "bibtex" -%}
+            <a href="{{ val }}">{{ key | upcase }}</a>
+            {%- else -%}
+            <a href="{{ val }}" target="_blank" rel="noopener">{{ key | upcase }}</a>
+            {%- endif -%}
+          {%- endcapture -%}
+          {%- assign rendered = rendered | push: item_html -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if rendered.size > 0 %}
+    <p class="pub-links">{{ rendered | join: " · " }}</p>
+      {%- endif -%}
+    {%- endif %}
+  </li>
+  {%- endfor %}
+</ul>
+{%- endfor -%}

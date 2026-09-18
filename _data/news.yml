@@ -1,0 +1,8 @@
+# 近期动态。首页显示最近 5 条，全部条目在 /news/ 展开。
+# 条数不足 5 条时首页不出现 "All news" 链接。
+# 没有任何条目时保持 `[]`，首页该区块会自动隐藏。
+#
+# 模板（复制后去掉行首的 # 并填写）：
+# - date: 2026-09-01
+#   text: "One-line update, e.g. our paper was accepted at NeurIPS 2026."
+[]

@@ -1,0 +1,63 @@
+# ---------------------------------------------------------------------------
+# 站点配置
+# ---------------------------------------------------------------------------
+
+# 浏览器标签页与搜索结果中显示的标题
+title: Yimeng Kuang
+
+# 用于 SEO 与社交分享卡片，建议改成一句准确的自我描述
+description: >-
+  Personal academic website of Yimeng Kuang.
+
+# GitHub Pages 用户站点，域名固定，不要追加路径
+url: "https://mengyiguang.github.io"
+baseurl: ""
+
+lang: en
+
+author:
+  name: Yimeng Kuang
+
+# 生成 /publications/ 这类干净 URL
+permalink: pretty
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# 仅启用 GitHub Pages 白名单内的插件。
+# 白名单以外的插件在线上构建时会被静默忽略，本地预览正常、线上失效。
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-relative-links
+
+# 导航。新增/删除页面时同步修改此处
+nav:
+  - title: Home
+    url: /
+  - title: Publications
+    url: /publications/
+  - title: Research
+    url: /research/
+  - title: Teaching
+    url: /teaching/
+  - title: CV
+    url: /cv/
+  - title: News
+    url: /news/
+
+# 不参与构建的文件。根目录下的 .md 默认会被渲染成公开页面，务必列全。
+exclude:
+  - README.md
+  - PROMPT_resume_site.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

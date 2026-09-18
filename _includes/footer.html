@@ -1,0 +1,11 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-copy">
+      &copy; {{ site.time | date: "%Y" }}
+      {{- site.data.profile.name_romanized | default: site.title | prepend: " " }}
+    </p>
+    {%- if site.data.profile.last_updated and site.data.profile.last_updated != "" %}
+    <p class="footer-updated">Last updated {{ site.data.profile.last_updated }}.</p>
+    {%- endif %}
+  </div>
+</footer>

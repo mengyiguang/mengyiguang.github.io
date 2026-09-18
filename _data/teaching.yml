@@ -1,0 +1,10 @@
+# 教学与助教经历，按时间倒序书写，用于 /teaching/ 页面。
+#
+# 模板：
+# - course: ""
+#   role: ""                  # 例如 "Teaching Assistant" / "Instructor"
+#   institution: ""
+#   term: ""                  # 例如 "Spring 2026"
+#   note: ""
+#   url: ""
+[]

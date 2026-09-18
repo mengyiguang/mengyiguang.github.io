@@ -1,0 +1,45 @@
+# 首页左栏与全站共用的个人信息。
+# 值为空的字段不会渲染，填多少显示多少。
+
+name_full: "邝一勐"
+name_romanized: "Yimeng Kuang"
+
+# 当前职务，例如 "PhD Student" / "Research Assistant"
+position: ""
+
+# 单位与院系
+affiliation: ""
+department: ""
+
+# 公开联系邮箱
+email: ""
+
+# 头像文件名（放在 assets/img/ 下），例如 "portrait.jpg"。留空则不显示头像。
+photo: ""
+
+# 首页简介，150~250 词。支持 Markdown（可写 [链接](https://...)）。
+bio_long: ""
+
+# 研究方向关键词，3~5 个
+research_interests: []
+
+# 外部链接。url 留空的条目不会渲染，可按需增删。
+links:
+  - label: Google Scholar
+    url: ""
+  - label: ORCID
+    url: ""
+  - label: GitHub
+    url: "https://github.com/mengyiguang"
+  - label: DBLP
+    url: ""
+  - label: LinkedIn
+    url: ""
+  - label: X
+    url: ""
+
+# CV PDF 文件名（放在 files/ 下），例如 "cv.pdf"。留空则不显示下载按钮。
+cv_file: ""
+
+# 页脚显示的最后更新月份，例如 "September 2026"
+last_updated: ""

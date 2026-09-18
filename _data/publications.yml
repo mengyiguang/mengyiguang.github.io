@@ -1,0 +1,26 @@
+# 论文列表。按 year 倒序自动分组，组内按本文件中的书写顺序排列，
+# 因此请把本人一作的论文写在各年份分组的最前面。
+#
+# authors 字段以 ", " 分隔；本人姓名（_data/profile.yml 中的 name_romanized）
+# 会被自动加粗，无需手工标注。
+#
+# links 下只渲染填写了的字段，留空的不会显示。
+#
+# 模板（复制后去掉行首的 # 并填写）：
+#
+# - title: "Paper Title"
+#   title_url: ""
+#   authors: "A. Author, Yimeng Kuang, B. Author"
+#   venue: "NeurIPS"
+#   venue_full: "Conference on Neural Information Processing Systems"
+#   year: 2026
+#   type: conference          # conference | journal | workshop | preprint
+#   selected: true            # true 则同时出现在首页 Selected Publications
+#   links:
+#     pdf: ""
+#     code: ""
+#     arxiv: ""
+#     doi: ""
+#     slides: ""
+#     bibtex: ""
+[]

@@ -1,0 +1,10 @@
+{%- comment -%}
+页面 <head>。jekyll-seo-tag 负责 <title>、description、canonical、Open Graph。
+{%- endcomment -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% seo %}
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">

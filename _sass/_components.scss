@@ -1,0 +1,231 @@
+/* ---------------------------------------------------------------------------
+   External links (text labels, no icon fonts / no CDN assets)
+   --------------------------------------------------------------------------- */
+.profile-links {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .profile-links {
+    justify-content: center;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Publications
+   --------------------------------------------------------------------------- */
+.pub-year {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  margin: var(--space-6) 0 var(--space-3);
+  padding-bottom: var(--space-1);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pub-item {
+  margin-bottom: var(--space-5);
+  break-inside: avoid;
+}
+
+.pub-title {
+  margin: 0 0 var(--space-1);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.pub-authors,
+.pub-venue,
+.pub-links {
+  margin: 0 0 var(--space-1);
+  font-size: 0.9375rem;
+}
+
+.pub-authors {
+  color: var(--color-text);
+}
+
+.pub-venue {
+  color: var(--color-text-muted);
+}
+
+.pub-venue em {
+  font-style: italic;
+}
+
+.pub-links {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.pub-links a {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pub-links a:hover {
+  border-bottom-color: currentColor;
+}
+
+/* ---------------------------------------------------------------------------
+   News
+   --------------------------------------------------------------------------- */
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+  break-inside: avoid;
+}
+
+.news-list .news-item:last-child {
+  border-bottom: 0;
+}
+
+.news-date {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.news-text p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Miscellaneous
+   --------------------------------------------------------------------------- */
+.interests {
+  margin: 0;
+}
+
+.more {
+  margin-top: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+}
+
+/* CV 分节 */
+.cv-section {
+  margin-top: var(--space-6);
+}
+
+.cv-section h2 {
+  font-size: 1.1rem;
+  margin: 0 0 var(--space-3);
+  padding-bottom: var(--space-1);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cv-entry {
+  margin-bottom: var(--space-4);
+  break-inside: avoid;
+}
+
+.cv-entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
+  align-items: baseline;
+}
+
+.cv-entry-title {
+  font-weight: 600;
+  margin: 0;
+}
+
+.cv-entry-period,
+.cv-entry-org {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.cv-entry-note {
+  margin: var(--space-1) 0 0;
+  font-size: 0.9375rem;
+}
+
+.empty {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* ---------------------------------------------------------------------------
+   Print
+   --------------------------------------------------------------------------- */
+@media print {
+  :root {
+    --color-text: #000000;
+    --color-text-muted: #333333;
+    --color-bg: #ffffff;
+    --color-border: #999999;
+    --color-accent: #000000;
+  }
+
+  body {
+    font-size: 11pt;
+  }
+
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .more {
+    display: none !important;
+  }
+
+  .wrap {
+    max-width: none;
+    padding: 0;
+  }
+
+  .pub-item,
+  .cv-entry,
+  .news-item {
+    break-inside: avoid;
+  }
+
+  a {
+    color: #000000;
+    border-bottom: 0;
+  }
+
+  /* 打印时展开链接地址 */
+  .pub-links a::after,
+  .profile-links a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+  }
+}
