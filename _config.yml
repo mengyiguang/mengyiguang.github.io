@@ -5,9 +5,12 @@
 # 浏览器标签页与搜索结果中显示的标题
 title: Yimeng Kuang
 
-# 用于 SEO 与社交分享卡片，建议改成一句准确的自我描述
+# 用于 SEO meta description 与社交分享卡片。
+# 注意：jekyll-seo-tag 会把它拼在首页标题后面，渲染成
+# "Yimeng Kuang | <description>"，所以这里不要再重复姓名。
+# 内页标题不受影响，仍为 "<页面标题> | Yimeng Kuang"。
 description: >-
-  Personal academic website of Yimeng Kuang.
+  Research, publications, and teaching.
 
 # GitHub Pages 用户站点，域名固定，不要追加路径
 url: "https://mengyiguang.github.io"
